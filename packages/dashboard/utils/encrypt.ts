@@ -9,10 +9,17 @@ import { Buffer } from "buffer";
 import { create, get } from "@github/webauthn-json";
 
 // TODO: Should really be on the server side
-const ORACLE_PUBLIC_KEY = process.env
+// Also probably should be on the contract!
+const ORACLE_PUBLIC_KEY_FROM_LOCAL_ENV = process.env
   .NEXT_PUBLIC_ORACLE_PUBLIC_KEY as unknown as KeyLike;
 
-if (!ORACLE_PUBLIC_KEY) throw new Error("Missing Oracle public keys");
+const ORACLE_PUBLIC_KEY_FROM_ROOT_ENV = process.env
+  .NEXT_PUBLIC_ORACLE_PUBLIC_KEY_FROM_ROOT_ENV as unknown as KeyLike;
+
+const ORACLE_PUBLIC_KEY =
+  ORACLE_PUBLIC_KEY_FROM_LOCAL_ENV || ORACLE_PUBLIC_KEY_FROM_ROOT_ENV;
+
+if (!ORACLE_PUBLIC_KEY) throw new Error("Missing Oracle public key");
 
 // Encrypt JSON data with AES symmetric encryption
 export function encryptField(
