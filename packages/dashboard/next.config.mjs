@@ -7,7 +7,7 @@ const sharedEnv = getEnv();
 const nextConfig = {
     // TODO: We don't need this, just shared encrypt utils.
     env: {
-      NEXT_PUBLIC_ORACLE_PUBLIC_KEY: sharedEnv.ORACLE_PUBLIC_KEY,
+      NEXT_PUBLIC_ORACLE_PUBLIC_KEY: process.env.NEXT_PUBLIC_ORACLE_PUBLIC_KEY || sharedEnv.ORACLE_PUBLIC_KEY,
     },
     images: {
         remotePatterns: [
