@@ -1,0 +1,8 @@
+{
+  "name": "MessageCenter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kirkas/MessageCenter.git",
+  "author": "Léo Galley <contact@kirkas.ch>",
+  "license": "MIT"
+}
