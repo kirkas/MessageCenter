@@ -86,7 +86,7 @@ export default function AuthorizationItem({
     <>
       <td className="px-6 py-4">
         <div className="flex gap-2 items-center ">
-          {senderAvatar && (
+          {senderAvatar && senderName && (
             <Image
               src={senderAvatar}
               alt={senderName}
@@ -100,7 +100,7 @@ export default function AuthorizationItem({
       </td>
       <td className="px-6 py-4">
         <div className="flex gap-2 items-center ">
-          {oracleAvatar && (
+          {oracleAvatar && oracleName && (
             <Image
               src={oracleAvatar}
               alt={oracleName}

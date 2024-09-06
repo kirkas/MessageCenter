@@ -84,7 +84,7 @@ export default function UserItem({ user }: { user: User }) {
     <>
       <td className="px-6 py-4">
         <div className="flex gap-2 items-center ">
-          {avatar && (
+          {avatar && userBasename && (
             <Image
               src={avatar}
               alt={userBasename}
@@ -98,7 +98,7 @@ export default function UserItem({ user }: { user: User }) {
       </td>
       <td className="px-6 py-4">
         <div className="flex gap-2 items-center ">
-          {oracleAvatar && (
+          {oracleAvatar && oracleName && (
             <Image
               src={oracleAvatar}
               alt={oracleName}

@@ -6,7 +6,6 @@ import crypto, {
   randomBytes,
 } from "crypto";
 import { Buffer } from "buffer";
-
 import { create, get } from "@github/webauthn-json";
 
 // TODO: Should really be on the server side

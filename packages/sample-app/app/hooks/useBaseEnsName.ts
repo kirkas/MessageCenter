@@ -13,12 +13,11 @@ export type UseBaseEnsNameProps = {
   address?: Address;
 };
 
-export type BaseEnsNameData = BaseName | undefined;
-
 // Wrapper around onchainkit's useName
 export default function useBaseEnsName({ address }: UseBaseEnsNameProps) {
   const { data, isLoading, refetch, isFetching } = useName(
     {
+      // @ts-ignore
       address: address,
       chain: baseSepolia,
     },
@@ -27,7 +26,7 @@ export default function useBaseEnsName({ address }: UseBaseEnsNameProps) {
     },
   ) as UseQueryResult<GetNameReturnType, Error>;
 
-  const ensNameTyped = data ? (data as BaseName) : undefined;
+  const ensNameTyped = data ? (data as Basename) : undefined;
 
   return {
     data: ensNameTyped,

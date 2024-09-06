@@ -2,7 +2,6 @@
 
 import useBaseEnsName from "@/hooks/useBaseEnsName";
 import Image from "next/image";
-import Markdown from "react-markdown";
 import { baseSepolia } from "viem/chains";
 import { useEnsAvatar } from "wagmi";
 
@@ -33,7 +32,7 @@ export default function MessageItem({ message }: { message: Message }) {
   return (
     <article className="flex flex-row gap-2 p-4">
       <div>
-        {senderAvatar && (
+        {senderAvatar && senderBasename && (
           <Image
             src={senderAvatar}
             alt={senderBasename}
